@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMPLOYEES LIST</title>
+</head>
+<body>
+    <h1 style="color:black">Employees List</h1>
+        <table>
+        <tr style="color:darkred">
+            <th>Name</th>
+            <th>Department</th>
+            <th>Salary</th>
+            <th>Bonus</th>
+            <th>#</th>
+        </tr>
+        {% for emp in employees %}
+        <tr>
+            <td style="color:rgba(73, 40, 222, 0.899)">{{emp.name}}</td>
+            <td style="color:aqua">{{emp.department}}</td>
+            <td style="color:hotpink">{{emp.salary}}</td>
+            <td style="color:green">{{emp.bonus}}
+            </td>
+            <td>
+                <a href="{% url 'remove_emp' emp.id %}">
+                    <button>Remove</button>
+                    </a>
+                <a href="{% url 'update_form' emp.id %}">
+                    <button>Change</button>
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+
+    </table>
+    
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration form</title>
+</head>
+<body>
+    <h1>Registration Page</h1>
+    
+    <form action="{% url 'add_emp' %}">
+        {% csrf_token %}
+        <label for="" >Name</label><br>
+        <input type="text" id="name" name="name"><br>
+
+        <label for="" >Department</label><br>
+        <input type="text" id="department" name="department"><br>
+
+        <label for="" >Salary</label><br>
+        <input type="text" id="salary" name="salary"><br>
+
+        <label for="" >Bonus</label><br>
+        <input type="text" id="bonus" name="bonus"><br>
+
+        <input type="submit" value="Add">
+
+    </form>
+    
+    
+    
+</body>
+</html>
